@@ -1,8 +1,11 @@
 function addTask() {
     const taskInput = document.getElementById("taskInput");
     const taskText = taskInput.value.trim();
-    if (taskText === "") return;
-    
+    if (taskText === ""){
+        alert("Error")
+        return;
+    }
+   
     const li = document.createElement("li");
     
     const checkbox = document.createElement("input");
@@ -16,10 +19,10 @@ function addTask() {
     
     // Create the image element for the delete button
     const deleteImage = document.createElement("img");
-    deleteImage.src = "./images/delete.png"; // Make sure the image path is correct
+    deleteImage.src = "./images/delete.png"; 
     deleteImage.alt = "Delete";
     deleteImage.width = 20;
-    deleteImage.style.cursor = "pointer";  // Add a cursor pointer to indicate it's clickable
+    deleteImage.style.cursor = "pointer"; 
     deleteImage.onclick = function() {
         li.remove();
     };
@@ -31,4 +34,6 @@ function addTask() {
     document.getElementById("taskList").appendChild(li);
     
     taskInput.value = ""; // Clear input field after adding task
+
 }
+
